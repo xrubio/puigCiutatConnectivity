@@ -1,5 +1,5 @@
-# source code for submitted paper:
-A spatial connectivity approach for understanding landscapes of conflict: Julius Caesar and the assault to Puig Ciutat (NE Iberian Peninsula)
+# A spatial connectivity approach for understanding landscapes of conflict: Julius Caesar and the assault to Puig Ciutat (NE Iberian Peninsula)
+source code for submitted paper
 
 # requirements
 This analysis uses a diversity of open source packages including:
