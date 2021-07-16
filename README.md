@@ -11,7 +11,7 @@ This analysis uses a diversity of open source packages including:
 # steps
 * Download and extract the entire project from XXX.
 * Move this folder to the same root directory where the dataset has been extracted
-* [optional] Open the QGIS projects located at data/ to explore the spatial data
+* **optional** Open the QGIS projects located at data/ to explore the spatial data
 * Run the Julia scripts to perform CT computations:
 ** *natural* for the natural routes
 ** *campaign* for the three sources (Massalia, Tarraco and Emporion)
