@@ -3,13 +3,13 @@ library(ggplot2)
 library(gridExtra)    
 
 # load the three datasets of points
-visible <- read_sf('../local/sampling/visible.shp')
+visible <- read_sf('output/local/visible.gpkg')
 visible$area <- "visible <10km"
 
-nonVisible <- read_sf('../local/sampling/nonVisible.shp')
+nonVisible <- read_sf('output/local/nonVisible.gpkg')
 nonVisible$area <- "non visible <10km"
 
-random<- read_sf('../local/sampling/random.shp')
+random<- read_sf('output/local/random.gpkg')
 random$area <- "random"
 
 # aggregated the 3 datasets
@@ -26,7 +26,10 @@ ksVisNonVis <- ks.test(visible$local_c, nonVisible$local_c)
 # Bonferroni correction to multiple hypothesis testing    
 p.adjust(c(ksVisRandom$p.value, ksNonVisRandom$p.value,ksVisNonVis$p.value), method="bonferroni")
 
+# get normalized values 0-1
+vall$local_c_norm <-(vall$local_c-min(vall$local_c, na.rm=T))/(max(vall$local_c, na.rm=T)-min(vall$local_c, na.rm=T))
+
 pdf("local_stats.pdf", width=4, height=4)
-ggplot(vall, aes(x=local_c, col=area, fill=area)) + geom_density(alpha=0.5) + facet_wrap(~area, ncol=1) +  theme_bw() + xlab("connectivity") + theme(legend.position="none") + scale_fill_manual(values=c("skyblue3", "indianred2", "white")) + scale_colour_manual(values=c("skyblue3","indianred2","black")) 
+ggplot(vall, aes(x=local_c_norm, col=area, fill=area)) + geom_density(alpha=0.5) + facet_wrap(~area, ncol=1) +  theme_bw() + xlab("connectivity") + theme(legend.position="none") + scale_fill_manual(values=c("skyblue3", "indianred2", "white")) + scale_colour_manual(values=c("skyblue3","indianred2","black")) 
 dev.off()
 
