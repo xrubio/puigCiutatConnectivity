@@ -1,5 +1,6 @@
-# A spatial connectivity approach for understanding landscapes of conflict: Julius Caesar and the assault to Puig Ciutat (NE Iberian Peninsula)
-source code for submitted paper
+Source Code for the analysis published in:
+Rubio-Campillo, X., Ble, E., Pujol, À., Sala, R. and Tamba, R., 2022. A spatial connectivity approach to landscapes of conflict: Julius Caesar and the assault to Puig Ciutat (NE Iberian Peninsula). Journal of Archaeological Method and Theory, pp.1-31.
+The paper is fully available under an Open Access license from: https://doi.org/10.1007/s10816-022-09549-7
 
 # requirements
 This analysis uses a diversity of open source packages including:
